@@ -2,12 +2,17 @@ package DecoratorBaking;
 public class Baking {
 
 	public static void main(String[] args) {
-		BakedGoods cookies = new Cookies();
-		BakedGoods toppings = new Toppings();
-		System.out.println("Customer ordered: " + cookies.getDescription() + toppings.getDescription());
 		
-		BakedGoods generic = new GenericGoods();
-		System.out.println("Customer ordered: " + generic.getDescription());
+		BakedGoods cookies = new Cookies();
+		System.out.println(cookies.getDescription() + " $" + cookies.cost());
+		
+		BakedGoods moreCookies = new Cookies();
+		moreCookies = new Sprinkles(moreCookies);
+		System.out.println(moreCookies.getDescription() + " $" + moreCookies.cost());
+		
+		BakedGoods pies = new Pies();
+		pies = new WhippedCream(pies);
+		System.out.println(pies.getDescription() + " $" + pies.cost());
 	}
 
 }

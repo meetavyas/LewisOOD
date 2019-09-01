@@ -6,7 +6,8 @@ public class Cookies extends BakedGoods {
 		description = "Sugar cookies";
 	}
 	
-	public String getDescription() {
-		return description;
+	public double cost() {
+		return 0.99;
 	}
+	
 }
